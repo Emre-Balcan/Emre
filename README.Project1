@@ -1,0 +1,106 @@
+# Emre
+
+import java.util.Scanner;
+public class Odev2 {
+    public static void main(String[] args) {
+
+        Scanner otopark = new Scanner(System.in);
+
+        int OtomobilSayısı = 0;
+        int KamyonSayısı = 0;
+        int OtobüsSayısı = 0;
+        int OtomobilCiro = 0;
+        int KamyonCiro = 0;
+        int OtobüsCiro = 0;
+        int OtomobilinKarMiktarı = 0;
+        int KamyonunKarMiktarı = 0;
+        int OtobüsünKarMiktarı = 0;
+        int OtomobilFiyat = 0;
+        int OtobüsFiyat = 0;
+        int KamyonFiyat = 0;
+        int OtomobilToplamKar = 0;
+        int KamyonToplamKar = 0;
+        int OtobüsToplamKar = 0;
+
+        while (true) {
+
+            System.out.println("Otoparka giriş yapan araç türünü girin :     (O:otomobil , K:kamyon , B:otobüs , C:sonuçları göster)");
+            String AracınTürü = otopark.nextLine();
+
+            if (AracınTürü.equals("C")) {
+                break;
+            }
+
+
+            if (AracınTürü.equals("O")) {
+                OtomobilFiyat = 20;
+                OtomobilinKarMiktarı = 5;
+                OtomobilSayısı++;
+            } else if (AracınTürü.equals("K")) {
+                KamyonFiyat= 50;
+                KamyonunKarMiktarı = 15;
+                KamyonSayısı++;
+            } else if (AracınTürü.equals("B")) {
+                 OtobüsFiyat= 80;
+                OtobüsünKarMiktarı = 28;
+                OtobüsSayısı++;
+            } else {
+                System.out.println("Geçersiz araç türü girdiniz!!.Lütfen tekrar deneyiniz");
+                continue;
+            }
+
+            OtomobilCiro = OtomobilFiyat*OtomobilSayısı;
+            KamyonCiro = KamyonFiyat*KamyonSayısı;
+            OtobüsCiro = OtobüsFiyat*OtobüsSayısı;
+            OtomobilToplamKar = OtomobilinKarMiktarı*OtomobilSayısı;
+            OtobüsToplamKar = OtobüsünKarMiktarı*OtobüsSayısı;
+            KamyonToplamKar = KamyonunKarMiktarı*KamyonSayısı;
+
+
+        }
+
+            int ToplamAraçSayısı = (int) (OtobüsSayısı + OtomobilSayısı + KamyonSayısı) ;
+            int ToplamKarMiktarı = (int) (KamyonToplamKar + OtobüsToplamKar + OtomobilToplamKar);
+            int ToplamGelirMiktarı = (int)(OtobüsCiro + OtomobilCiro + KamyonCiro);
+            double OtomobilinYüzdelikKarı = (double) (OtomobilToplamKar*100/ToplamKarMiktarı);
+            double OtobüsünYüzdelikKarı = (double) (OtobüsToplamKar*100/ToplamKarMiktarı);
+            double KamyonunYüzdelikKarı = (double) (KamyonToplamKar*100/ToplamKarMiktarı);
+            double OtomobilinYüzdelikCirosu = (double) (OtomobilCiro*100/ToplamGelirMiktarı);
+            double OtobüsünYüzdelikCirosu = (double) (OtobüsCiro*100/ToplamGelirMiktarı);
+            double KamyonunYüzdelikCirosu = (double) (KamyonCiro*100/ToplamGelirMiktarı);
+
+
+
+            System.out.println("Otoparka giren otomobil sayısı = " + OtomobilSayısı);
+            System.out.println("Otoparka giren kamyon sayısı = " + KamyonSayısı);
+            System.out.println("Otoparka giren otobüs sayısı = " + OtobüsSayısı);
+            System.out.println("Otomobilden gelen ciro miktarı = " + OtomobilCiro + "TL");
+            System.out.println("Kamyondan gelen ciro miktarı = " + KamyonCiro + "TL");
+            System.out.println("Otobüsten gelen ciro miktarı = " + OtobüsCiro + "TL");
+            System.out.println("Otomobilden gelen ciro miktarının yüzdelik dilimi = " + "%" + OtomobilinYüzdelikCirosu);
+            System.out.println("Kamyondan gelen ciro miktarının yüzdelik dilimi = " + "%" + KamyonunYüzdelikCirosu);
+            System.out.println("Otobüsten gelen ciro miktarının yüzdelik dilimi = " + "%" + OtobüsünYüzdelikCirosu);
+            System.out.println("Otomobilden elde edilen kar miktarı = " + OtomobilToplamKar + "TL");
+            System.out.println("Kamyondan elde edilen kar miktarı = " + KamyonToplamKar + "TL");
+            System.out.println("Otobüsten elde edilen kar miktarı = " + OtobüsToplamKar + "TL");
+            System.out.println("Otomobilden elden edilen karın yüzdesi = " + "%" + OtomobilinYüzdelikKarı);
+            System.out.println("Kamyondan elde edilen karın yüzdesi = " + "%" + KamyonunYüzdelikKarı);
+            System.out.println("Otobüsten elde edilen karın yüzdesi = " + "%" + OtobüsünYüzdelikKarı);
+            System.out.println("Otoparka giren toplam araç sayısı = " + ToplamAraçSayısı);
+            System.out.println("Araçlardan elde edilen toplam gelir miktarı = " + ToplamGelirMiktarı + "TL");
+            System.out.println("Araçlardan elde dilen toplam kar miktarı = " + ToplamKarMiktarı + "TL");
+
+
+
+
+
+
+
+            }
+
+
+
+        }
+
+
+
